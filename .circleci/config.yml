@@ -321,11 +321,6 @@ jobs:
       - run:
           name: Upload Packs To Marketplace Storage
           command: |
-            if [[ $CIRCLE_BRANCH != master ]]; then
-              echo "Skipping packs uploading on non master branch"
-              exit 0
-            fi
-
             if [ $CIRCLE_NODE_INDEX -ne 0 ] ;
               then
                 echo 'Skipping - running only in container number 0.'
